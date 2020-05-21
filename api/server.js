@@ -16,4 +16,15 @@ server.use(cors());
 server.get("/", (req, res) => {
   res.send("<h1> Server starts here</h1> <h2> Navigate to</h2> <h3>/api</h3>");
 });
+
+server.get("/hobbits", (req, res) => {
+  Hobbits.getAll()
+    .then((hobbits) => {
+      res.status(200).json(hobbits);
+    })
+    .catch((error) => {
+      res.status(500).json(error);
+    });
+});
+
 module.exports = server;
