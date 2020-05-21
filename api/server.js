@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const secret = require("../config/secret");
 const protect = require("../auth/protected");
+const Hobbits = require("../table/tableModel");
 
 const server = express();
 
