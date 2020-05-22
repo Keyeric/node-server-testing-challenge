@@ -15,7 +15,9 @@ server.use(cors());
 
 //Base url
 server.get("/", (req, res) => {
-  res.send("<h1> Server starts here</h1> <h2> Navigate to</h2> <h3>/api</h3>");
+  res.status(200).json({
+    api: "up",
+  });
 });
 
 server.get("/hobbits", (req, res) => {
